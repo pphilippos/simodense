@@ -9,7 +9,9 @@ The source code is divided into 4 directories. A separate README file accompanie
 - ``FPGA_Implementation_AXI_peripheral`` The FPGA directory provides additional Verilog code for interfacing with the an AXI interconnect (such as for Avnet's Ultra96 with the Xilinx device ZU3EG) and the relevant information for creating a Vivado project
 - ``ARM_Linux_Client_for_Ultra96`` The optional Linux (for ARM) client mainly provides C code for interfacing with the softcore in our heterogeneous platform. Having Linux and the specific board is not necessary, as AXI is a versatile protocol, at least for Xilinx boards. Though [bridges](https://github.com/ZipCPU/wb2axip) to other protocols exist as well. 
 
-#### Setting up the environment 
+This repository is almost mirrors with [here](http://philippos.info/simdsoftcore/).
+
+### Setting up the environment 
 
 - In order to run the simulations, [Icarus Verilog](http://iverilog.icarus.com/) is the main requirement for running the provided examples (tested with version 11.0 (stable) (v11_0)). For the debugging functionality through waveforms, a waveform viewer is recommended, such as [GTKWave Analyzer](http://gtkwave.sourceforge.net/) (tested on version 3.3.108).
 
@@ -43,10 +45,10 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
 
 - For experimentation on Xilinx FPGAs, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the licence (see [Release Notes](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug973-vivado-release-notes-install-license.pdf)).
 
-#### License
+### License
 
 [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0), except on code of other projects like some benchmarks in the Benchmarks folder.
-<br><br>
+```
    Copyright 2021 Philippos Papaphilippou @ Imperial College London
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +62,8 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
    
-#### Publications
+### Publications
 
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V ISA for exploring advanced reconfigurable SIMD instructions" The Fifth Workshop on Computer Architecture Research with RISC-V (CARRV 2021) (co-located with ISCA 2021) [pdf](https://carrv.github.io/2021/papers/CARRV2021_paper_86_Papaphilippou.pdf) [slides](https://carrv.github.io/2021/slides/CARRV2021_slides_86_Papaphilippou.pdf) [source](http://philippos.info/simdsoftcore/) [video](https://carrv.github.io/2021/videos/CARRV2021_full_86_Papaphilippou.html) [program](https://carrv.github.io/2021) [bib](./simdcarrv.bib)   

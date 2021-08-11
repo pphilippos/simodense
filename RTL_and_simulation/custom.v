@@ -58,8 +58,8 @@ module C3_custom_SIMD_instruction (clk, reset,
 	
 	////// USER CODE HERE //////	
 	assign out_data=0;
-	assign out_data1=0;
-	assign out_data2=0;
+	assign out_vdata1=0;
+	assign out_vdata2=0;
 endmodule // C3_custom_SIMD_instruction
 
 

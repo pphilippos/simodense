@@ -70,7 +70,7 @@ module IDecoder(instr, iformat, rs1, rs2, rd, immediate, alui_en, auipc_en, load
 			5'h02: iformat = `Rtype; // Custom instruction 0 (c0_lv, c0_sv)
 			5'h0A: iformat = `Itype; // Custom instruction 1 (c1 (for c1_merge in the example))	
 			5'h16: iformat = `Itype; // Custom instruction 2 (c2 (for c2_sort or c2_prefix in the example))	
-			5'h1E: iformat = `Itype; // Custom instruction 2 (c3)		
+			5'h1E: iformat = `Itype; // Custom instruction 3 (c3)		
 
 			default begin 
 				iformat =`Rtype; 
@@ -493,12 +493,9 @@ module Core (clk, reset, cycles,
 			
 			// On a valid result from custom instruction C3, update the registers, and mark them non-pending		
 			if(c3_out_v) begin
-				reg_file[c3_out_rd]<=c1_out;
-				reg_pend[c3_out_rd]<=0;
-				reg_file_v[c3_out_rd1]<=c1_outA;
-				reg_file_v[c3_out_rd2]<=c1_outB;				 
-				reg_pend_v[c3_out_rd1]<=0; reg_pend_v[c1_out_rd2]<=0;	
-				
+				reg_file[c3_out_rd]<=c3_out;		reg_pend[c3_out_rd]<=0;
+				reg_file_v[c3_out_rd1]<=c3_outA;	reg_pend_v[c3_out_rd1]<=0;
+				reg_file_v[c3_out_rd2]<=c3_outB;	reg_pend_v[c3_out_rd2]<=0;					
 				if(`DEB) $display("C3_PEND finished %d",cycle_counter+1);		
 			end	
 

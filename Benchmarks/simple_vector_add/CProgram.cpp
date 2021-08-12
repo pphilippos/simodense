@@ -80,7 +80,7 @@ void main(int argc, char** argv) {
 		if (destA[i] != destB[i]){
   			error=1; 
   		}
-  		printf("\n%d) (%d + %d)\tvactor: %d\t serial:%d", i, srcA[i], srcB[i], destA[i], destB[i]);  		
+  		printf("\n%d) (%d + %d)\tvector: %d\t serial:%d", i, srcA[i], srcB[i], destA[i], destB[i]);  		
   	}	
   	printf("\nEnd%d!\n",error);	 
     

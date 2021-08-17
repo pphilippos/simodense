@@ -66,4 +66,8 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
    
 ### Publications
 
+Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [link](http://hdl.handle.net/10044/1/90081) [source](http://philippos.info/simodense/)
+
+Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SIMD instruction development for a RISC-V softcore" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [link](http://hdl.handle.net/10044/1/90369) [source](https://github.com/pphilippos/simodense) [video](https://youtu.be/6sLXqFIJheU) 
+
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V ISA for exploring advanced reconfigurable SIMD instructions" The Fifth Workshop on Computer Architecture Research with RISC-V (CARRV 2021) (co-located with ISCA 2021) [pdf](https://carrv.github.io/2021/papers/CARRV2021_paper_86_Papaphilippou.pdf) [slides](https://carrv.github.io/2021/slides/CARRV2021_slides_86_Papaphilippou.pdf) [source](http://philippos.info/simdsoftcore/) [video](https://carrv.github.io/2021/videos/CARRV2021_full_86_Papaphilippou.html) [program](https://carrv.github.io/2021) [bib](http://philippos.info/papers/simdcarrv.bib)   

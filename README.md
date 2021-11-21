@@ -68,7 +68,7 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
    
 ### Publication
 
-Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simodense.pdf) [link](https://ieeexplore.ieee.org/document/9556386/) [source](http://philippos.info/simodense/) [video] (https://youtu.be/hYdqvmoQx3E) [program](https://cfaed.tu-dresden.de/fpl2021/program) [bib](http://philippos.info/papers/simodense.bib)
+Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simodense.pdf) [link](https://ieeexplore.ieee.org/document/9556386/) [source](http://philippos.info/simodense/) [video](https://youtu.be/hYdqvmoQx3E) [program](https://cfaed.tu-dresden.de/fpl2021/program) [bib](http://philippos.info/papers/simodense.bib)
 
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SIMD instruction development for a RISC-V softcore (demo abstract)" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simdemo.pdf) [link](https://ieeexplore.ieee.org/document/9556425) [source](https://github.com/pphilippos/simodense) [video](https://youtu.be/gdD6353bzzo) [bib](http://philippos.info/papers/simdemo.bib)
 

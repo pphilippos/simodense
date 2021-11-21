@@ -2,6 +2,8 @@
 
 ### Welcome to the source code repository for a RISC-V softcore optimised for exploring advanced reconfigurable SIMD instructions
 
+This repository contains a softcore built from scratch for supporting custom SIMD instruction development by Philippos Papaphilippou @ Imperial College London. See below for additional material from the publication, including a [video tutorial](https://youtu.be/gdD6353bzzo).
+
 The source code is divided into 4 directories. A separate README file accompanies each directory, to explain how the source code can be used to reproduce the experiments in the paper.
 
 - ``RTL_and_simulation`` This folder contains the main code of the softcore for simulation, as well as the template and examples for custom SIMD instructions. 
@@ -64,10 +66,10 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
    limitations under the License.
 ```
    
-### Publications
+### Publication
 
-Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [link](http://hdl.handle.net/10044/1/90081) [source](http://philippos.info/simodense/)
+Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simodense.pdf) [link](https://ieeexplore.ieee.org/document/9556386/) [source](http://philippos.info/simodense/) [video] (https://youtu.be/hYdqvmoQx3E) [program](https://cfaed.tu-dresden.de/fpl2021/program) [bib](http://philippos.info/papers/simodense.bib)
 
-Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SIMD instruction development for a RISC-V softcore" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [link](http://hdl.handle.net/10044/1/90369) [source](https://github.com/pphilippos/simodense) [video](https://youtu.be/gdD6353bzzo) 
+Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SIMD instruction development for a RISC-V softcore (demo abstract)" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simdemo.pdf) [link](https://ieeexplore.ieee.org/document/9556425) [source](https://github.com/pphilippos/simodense) [video](https://youtu.be/gdD6353bzzo) [bib](http://philippos.info/papers/simdemo.bib)
 
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V ISA for exploring advanced reconfigurable SIMD instructions" The Fifth Workshop on Computer Architecture Research with RISC-V (CARRV 2021) (co-located with ISCA 2021) [pdf](https://carrv.github.io/2021/papers/CARRV2021_paper_86_Papaphilippou.pdf) [slides](https://carrv.github.io/2021/slides/CARRV2021_slides_86_Papaphilippou.pdf) [source](http://philippos.info/simdsoftcore/) [video](https://carrv.github.io/2021/videos/CARRV2021_full_86_Papaphilippou.html) [program](https://carrv.github.io/2021) [bib](http://philippos.info/papers/simdcarrv.bib)   

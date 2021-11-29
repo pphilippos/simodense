@@ -41,6 +41,23 @@ Before compiling, we need to add the support of custom instructions to binutils.
 
 where ``c0_lv``, ``c0_sv`` are two custom instructions for vector load and store respectively, using the same opcode and the S' instruction type. `c1`, `c2` and `c3` are for the custom instructions, and are using the I' instruction type. Currently, `c1`, `c2` and `c3` are used for the merge, sort and prefix SIMD instruction examples, but can be replaced as well as increased and aliased. For more information on the pre-defined opcodes for custom instructions, and for adding more, see file `riscv-gnu-toolchain/riscv-binutils/include/opcode/riscv-opc.h`. The equivalent files are also included in the `riscv-gnu-toolchain/riscv-gdb`, should this be of use.
 
+Note that with the latest versions of the riscv-gnu-toolchain, the custom opcodes need to be added manually inside the file `riscv-gnu-toolchain/riscv-binutils/include/opcode/riscv-opc.h`. This was pointed out by (Dr. Todman)[http://www.doc.ic.ac.uk/~tjt97/]. For example the following snippet can be copied from an earlier version of `riscv-opc.h` from (here)[https://github.com/riscv-collab/riscv-binutils-gdb/blob/rvv-1.0.x/include/opcode/riscv-opc.h], as shown below.
+
+	#define MATCH_CUSTOM0 0xb
+	#define MASK_CUSTOM0  0x707f
+	#define MATCH_CUSTOM0_RS1 0x200b
+	#define MASK_CUSTOM0_RS1  0x707f
+	// ...
+	#define MATCH_CUSTOM1 0x2b
+	#define MASK_CUSTOM1  0x707f
+	// ...
+	#define MATCH_CUSTOM2 0x5b
+	#define MASK_CUSTOM2  0x707f
+	// ...
+	#define MATCH_CUSTOM3 0x7b
+	#define MASK_CUSTOM3  0x707f
+	// ...
+
 Finally, we compile the tools by running make, preferably with multiple-threads (15 in the example), as it can take a while.
 
 	$ make newlib -j15

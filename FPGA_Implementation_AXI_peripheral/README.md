@@ -10,7 +10,7 @@ There are the following files:
 
 -`MAXI_ip_doublewidth.v` The version of `MAXI_ip.v` that uses the "double frequency optimisation" for the interconnect, to provide 256-bit/cycle in our platform from a 128-bit port.
 
--`caches.v`, `cpu.v`, `custom.v` and `system.v` The Verilog code of the softcore, supporting the sort and merge custom SIMD instructions (see those in folder ``../RTL_and_simulation`` for better comments and documentation).
+-`caches.v`, `cpu.v`, `custom.v` and `system.v` The Verilog code of the softcore, supporting the sort and merge custom SIMD instructions (see those in folder ``../RTL_and_simulation`` for better comments and documentation). *Note*: these are older versions that potentially miss newer bugfixes, so fetch the updated `caches.v`, `cpu.v`, `custom.v` from ``../RTL_and_simulation`` for new projects.
 
 -`VivadoBlockDiagram.png` and `VivadoAddressEditor.png` Raster images showing indicative settings in Vivado for a ZynqMP-based project. `VivadoBlockDiagram_doublewidth.png` is for the alternative for `VivadoBlockDiagram.png` for the "double frequency optimisation".
 

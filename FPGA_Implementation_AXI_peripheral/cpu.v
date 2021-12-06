@@ -164,10 +164,10 @@ module ALUintM(clk, reset, valid, rdin, data1, data2, func, result, rd, ready, a
 	reg [63:0] num1; reg [63:0] num2;
 	always @(*) begin
 		case (func) 
-			3'h0: begin num1 ={{32{data1[31]}},data1}; num2 = {{32{data2[31]}},data2}; end // mul 
-			3'h1: begin num1 ={{32{data1[31]}},data1}; num2 = {{32{data2[31]}},data2}; end // mulh
-			3'h2: begin num1 ={32'b0,data1}; num2 = {32'b0,data2}; end // mulhu
-			3'h3: begin num1 ={{32{data1[31]}},data1}; num2 = {32'b0,data2}; end // mulhsu
+            3'h0: begin num1 ={32'b0,data1}; num2 = {32'b0,data2};  end // mul
+            3'h1: begin num1 ={{32{data1[31]}},data1}; num2 = {{32{data2[31]}},data2}; end // mulh
+            3'h2: begin num1 ={32{data1[31]}},data1}; num2 = {32'b0,data2}; end // mulhu
+            3'h3: begin num1 ={32'b0,data1}; num2 = {32'b0,data2}; end // mulhsu
 			default: begin num1 = data1; num2 = data2; end
 		endcase
 	end

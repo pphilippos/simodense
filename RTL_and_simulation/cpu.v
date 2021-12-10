@@ -208,7 +208,8 @@ module ALUintM(clk, reset, valid, rdin, data1, data2, func, result, rd, ready, a
 	   end
 	end
 	
-	always @(posedge clk2[1]) begin	
+	wire lc = (clk2==2'b11);
+	always @(posedge /*clk2[1]*/lc) begin	
 		
 		product = data1s * data2s;
 		case (pend_f) 

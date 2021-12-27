@@ -345,7 +345,7 @@ module PrefixSum1x8x32bit (clk, reset, vrd, in_v, in8, out_v, out8, out_vrd);
 	end
 	assign out_v=valid_sr[4-1];
 	assign out_vrd=vrd_sr[3*4-1-:3];
-	wire zero_sum; assign zero_sum = reset|(in_v && (vrd_sr[3*3-1-:3]==0));
+	wire zero_sum; assign zero_sum = reset|(valid_sr[2] && (vrd_sr[3*3-1-:3]==0));
 	
 	genvar i;
 	for (i=0; i<8; i=i+1) begin assign network[i]=in8[32*(i+1)-1-:32]; end

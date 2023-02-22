@@ -79,9 +79,11 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
    limitations under the License.
 ```
    
-### Publication
+### Related Publications
 
-Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simodense.pdf) [link](https://ieeexplore.ieee.org/document/9556386/) [source](http://philippos.info/simodense/) [video](https://youtu.be/hYdqvmoQx3E) [program](https://cfaed.tu-dresden.de/fpl2021/program) [bib](http://philippos.info/papers/simodense.bib)
+Philippos Papaphilippou, Myrtle Shah "FPGA-extended General Purpose Computer Architecture" The 18th International Symposium on Applied Reconfigurable Computing (ARC) 2022 [pdf](https://arxiv.org/pdf/2203.10359.pdf) [link](https://doi.org/10.1007/978-3-031-19983-7_7) [source](https://github.com/pphilippos/fpga-ext-arch) *(framework is based on Simodense)* [program](https://nicsefc.ee.tsinghua.edu.cn/detail.html?id=1030) [slides](https://www.researchgate.net/publication/363652284_FPGA-extended_General_Purpose_Computer_Architecture_slides) [video](https://youtu.be/B-UI6G1Cws8) [bib](http://philippos.info/papers/fpgaext.bib)
+
+**(main)** Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Simodense: a RISC-V softcore optimised for exploring custom SIMD instructions" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simodense.pdf) [link](https://ieeexplore.ieee.org/document/9556386/) [source](http://philippos.info/simodense/) [video](https://youtu.be/hYdqvmoQx3E) [program](https://cfaed.tu-dresden.de/fpl2021/program) [bib](http://philippos.info/papers/simodense.bib)
 
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SIMD instruction development for a RISC-V softcore (demo abstract)" The International Conference on Field-Programmable Logic and Applications (FPL) 2021 [pdf](http://philippos.info/papers/fpl21simdemo.pdf) [link](https://ieeexplore.ieee.org/document/9556425) [source](https://github.com/pphilippos/simodense) [video](https://youtu.be/gdD6353bzzo) [bib](http://philippos.info/papers/simdemo.bib)
 

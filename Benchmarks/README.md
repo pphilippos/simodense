@@ -26,6 +26,8 @@ export TOOL_DIR=/opt/riscv32im2/
 
 - Some metrics have not been fully ported. Specifically, the performance of `riscv-coremark` is done manually using the ticks rather than the seconds. (Its score was disabled anyway because floating point is disabled)
 
+- Apart from the `StartAddress`, you may also need to change `byte_address` inside `testbench.v`. This should be the start of the symbol table inside the corresponding objdump. (TODO: make it more consistent/automated)   
+
 #### Other notes:
 
 - `benchmark-dhrystone` was fetched from [here](https://github.com/sifive/benchmark-dhrystone) and the modifications were partly based on [PicoRV32](https://github.com/cliffordwolf/picorv32)

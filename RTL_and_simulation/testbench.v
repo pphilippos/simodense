@@ -16,7 +16,8 @@
 `define StackPointer 32'h0ffffff0
 
 // Use the StartAddress to set the start address of the binary
-`define StartAddress 32'h00010620
+`define StartAddress 32'h00010610
+`define SymbolTable 32'h010094
 
 // Use BINARY to set the path of the binary for simulation
 `define BINARY "firmware.bin"
@@ -42,6 +43,8 @@ module Memory (clk, reset, addr, en, we, dinDstrobe, din, doutDstrobe, dout, dre
     output reg dready;
     output wire accR;
     output wire accW;
+
+
     
     (* ram_style = "block" *) reg [`DL2block-1:0] block_ram [`BMEM_capacity/(`DL2block/8)-1:0];
     reg [`DL2block-1:0] rdata;
@@ -99,7 +102,7 @@ module Memory (clk, reset, addr, en, we, dinDstrobe, din, doutDstrobe, dout, dre
 	initial begin 
 
 		//byte_address=32'h00010000;
-		byte_address=32'h00010074;
+		byte_address=`SymbolTable;
 	    fd = $fopen(`BINARY, "rb"); 
 	    
 	    if (!fd) $error("could not read file");

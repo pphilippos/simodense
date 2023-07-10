@@ -8,3 +8,5 @@ make
 
 cat objdump.txt | grep "start address" 
 rm stream_c.exe
+
+cp firmware.bin ../../RTL_and_simulation/

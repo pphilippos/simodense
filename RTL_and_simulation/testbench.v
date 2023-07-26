@@ -16,7 +16,7 @@
 `define StackPointer 32'h0ffffff0
 
 // Use the StartAddress to set the start address of the binary
-`define StartAddress 32'h0001045c
+`define StartAddress 32'h0001111c
 `define SymbolTable 32'h010094
 
 // Use BINARY to set the path of the binary for simulation

@@ -13,3 +13,5 @@ $TOOL_DIR/bin/riscv32-unknown-elf-objdump -s -t -r -d -f --source ../coremark/co
 cat objdump.txt | grep "start address"
 
 cd ..
+
+cp firmware.bin ../../RTL_and_simulation/

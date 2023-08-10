@@ -13,7 +13,7 @@
    limitations under the License.
 */
 
-`define c3_pipe_cycles 5
+`define c3_pipe_cycles 1
 
 
 // Template for custom SIMD instruction
@@ -35,7 +35,8 @@ module C3_custom_SIMD_instruction (clk, reset,
 	output [4:0] out_rd;
 	output [2:0] out_vrd1, out_vrd2;	
 	output  [32-1:0] out_data;
-	output [`VLEN-1:0] out_vdata1, out_vdata2;
+	output reg [`VLEN-1:0] out_vdata1;
+	output out_vdata2;
 	
 	reg [`c3_pipe_cycles-1:0] valid_sr;
 	reg [5*`c3_pipe_cycles-1:0] rd_sr; 
@@ -57,8 +58,17 @@ module C3_custom_SIMD_instruction (clk, reset,
 	assign out_vrd2= vrd2_sr[3*`c3_pipe_cycles-1-:3];
 	
 	////// USER CODE HERE //////	
+
+	integer i;
+	always @(posedge clk) begin
+		for (i=0;i<8;i=i+1) begin
+			if(in_v) out_vdata1[32*(i+1)-1-:32] <= in_vdata1[32*(i+1)-1-:32] + in_vdata2[32*(i+1)-1-:32];
+		end
+	end
+
+
 	assign out_data=0;
-	assign out_vdata1=0;
+	//assign out_vdata1=0;
 	assign out_vdata2=0;
 endmodule // C3_custom_SIMD_instruction
 

@@ -49,11 +49,11 @@ module IL1Cache (clk, reset, PC, instr, ready,
     input readyB;
 
     reg [`VLEN-1:0] mem [`IL1sets-1:0];
-    reg [`IADDR_bits-`IL1setsLog2-`VLEN_Log2-1:0] tag_array [`IL1sets-1:0];
+    reg [`IADDR_bits-`IL1setsLog2-`VLEN_Log2+3-1:0] tag_array [`IL1sets-1:0];
     reg valid [`IL1sets-1:0];
     
     wire [`IL1setsLog2-1:0] set; assign set = PC>>(`VLEN_Log2-3);
-    wire [`IADDR_bits-`IL1setsLog2-`VLEN_Log2-1:0] tag; assign tag = PC>>(`VLEN_Log2-3+`IL1setsLog2);
+    wire [`IADDR_bits-`IL1setsLog2-`VLEN_Log2+3-1:0] tag; assign tag = PC>>(`VLEN_Log2-3+`IL1setsLog2);
     
     wire hit; assign hit = valid[set] && (tag_array[set]==tag);
     reg [`VLEN_Log2-5-1:0] roffset;

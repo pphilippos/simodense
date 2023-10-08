@@ -450,7 +450,7 @@ module Core (clk, reset, cycles,
 			for (i=0; i<32; i=i+1) begin
 				reg_file[i]<=0;    reg_pend[i]<=0;			
 			end	
-			for (i=0; i<4; i=i+1) begin
+			for (i=0; i<`NumVregisters; i=i+1) begin
 				reg_file_v[i]<=0;  reg_pend_v[i]<=0;		
 			end		
 			

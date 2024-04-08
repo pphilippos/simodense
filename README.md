@@ -2,12 +2,12 @@
 
 (mirrors: [philippos.info](https://philippos.info/simdsoftcore/), [GitHub](https://github.com/pphilippos/simodense))
 
-<br>
+
 ### Welcome to the source code repository for a RISC-V softcore optimised for exploring advanced reconfigurable SIMD instructions
 
 This repository contains a softcore built from scratch for supporting custom SIMD instruction development by Philippos Papaphilippou @ Imperial College London. See below for additional material from the publication, including a [video tutorial](https://youtu.be/gdD6353bzzo).
 
-<br>
+
 The source code is divided into 4 directories. A separate README file accompanies each directory, to explain how the source code can be used to reproduce the experiments in the paper.
 
 - ``RTL_and_simulation`` This folder contains the main code of the softcore for simulation, as well as the template and examples for custom SIMD instructions. 
@@ -15,7 +15,7 @@ The source code is divided into 4 directories. A separate README file accompanie
 - ``FPGA_Implementation_AXI_peripheral`` The FPGA directory provides additional Verilog code for interfacing with the an AXI interconnect (such as for Avnet's Ultra96 with the Xilinx device ZU3EG) and the relevant information for creating a Vivado project
 - ``ARM_Linux_Client_for_Ultra96`` The optional Linux (for ARM) client mainly provides C code for interfacing with the softcore in our heterogeneous platform. Having Linux and the specific board is not necessary, as AXI is a versatile protocol, at least for Xilinx boards. Though [bridges](https://github.com/ZipCPU/wb2axip) to other protocols exist as well. 
 
-<br>
+
 ### Setting up the environment 
 
 - In order to run the simulations, [Icarus Verilog](https://steveicarus.github.io/iverilog/) is the main requirement for running the provided examples (tested with version 11.0 (stable) (v11_0)). For the debugging functionality through waveforms, a waveform viewer is recommended, such as [GTKWave Analyzer](http://gtkwave.sourceforge.net/) (tested on version 3.3.108).
@@ -63,12 +63,12 @@ Finally, we compile the tools by running make, preferably with multiple-threads 
 
 - For experimentation on Xilinx FPGAs, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the licence (see [Release Notes](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug973-vivado-release-notes-install-license.pdf)).
 
-<br>
+
 ### License
 
 The following license applies to this source code, except on code of other projects like some benchmarks in the Benchmarks folder.
 
-<br>
+
 ```
 Copyright 2021-2024 Philippos Papaphilippou
    
@@ -91,7 +91,7 @@ You are free to use, learn from, modify and distribute this creative work under 
 7. The author has the right to change this license for future versions of this work, as well as to update and clarify the author's original intentions of the current version, such as with regard to what is considered "fair use" by the author for future entities and technologies.  
 ```
 
-<br>   
+   
 ### Related publications
 
 Philippos Papaphilippou, Myrtle Shah "FPGA-extended General Purpose Computer Architecture" The 18th International Symposium on Applied Reconfigurable Computing (ARC) 2022 [pdf](https://arxiv.org/pdf/2203.10359.pdf) [link](https://doi.org/10.1007/978-3-031-19983-7_7) [source](https://github.com/pphilippos/fpga-ext-arch) *(framework is based on Simodense)* [program](https://nicsefc.ee.tsinghua.edu.cn/detail.html?id=1030) [slides](https://www.researchgate.net/publication/363652284_FPGA-extended_General_Purpose_Computer_Architecture_slides) [video](https://youtu.be/B-UI6G1Cws8) [bib](http://philippos.info/papers/fpgaext.bib)
@@ -102,7 +102,7 @@ Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Demonstrating custom SI
 
 Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V ISA for exploring advanced reconfigurable SIMD instructions" The Fifth Workshop on Computer Architecture Research with RISC-V (CARRV 2021) (co-located with ISCA 2021) [pdf](https://carrv.github.io/2021/papers/CARRV2021_paper_86_Papaphilippou.pdf) [slides](https://carrv.github.io/2021/slides/CARRV2021_slides_86_Papaphilippou.pdf) [source](http://philippos.info/simdsoftcore/) [video](https://carrv.github.io/2021/videos/CARRV2021_full_86_Papaphilippou.html) [program](https://carrv.github.io/2021) [bib](http://philippos.info/papers/simdcarrv.bib)   
 
-<br>
+
 ### Thanks
 
 General comments or feedback on this repository has been provided by: [Tim Todman](http://www.doc.ic.ac.uk/~tjt97/), Hakam Atassi, Yutaka Nagashima

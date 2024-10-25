@@ -20,21 +20,36 @@ The source code is divided into 4 directories. A separate README file accompanie
 
 - In order to run the simulations, [Icarus Verilog](https://steveicarus.github.io/iverilog/) is the main requirement for running the provided examples (tested with version 11.0 (stable) (v11_0)). For the debugging functionality through waveforms, a waveform viewer is recommended, such as [GTKWave Analyzer](http://gtkwave.sourceforge.net/) (tested on version 3.3.108).
 
-- For software development for the softcore, we need to install the [RISC-V GNU Compiler Toolchain](https://github.com/riscv/riscv-gnu-toolchain), and modify it for supporting the custom SIMD instructions for inline assembly.
+- For software development for the softcore, we need to install the [RISC-V GNU Compiler Toolchain](https://github.com/riscv/riscv-gnu-toolchain), and modify it for supporting the custom SIMD instructions for inline assembly. Note that for simply testing that simulator works there already is a sample binary at ``RTL_and_simulation`` by default.
 
 First we fetch the code using the bash command (6.65GB of data, about 10GB after compilation):
 
-    $ git clone https://github.com/riscv/riscv-gnu-toolchain
+	$ git clone https://github.com/riscv/riscv-gnu-toolchain
 
 and change directory:
 
-    $ cd riscv-gnu-toolchain
+	$ cd riscv-gnu-toolchain
+
+*Update* - the file structure and behaviour of the RISC-V GNU toolchain has changed since the softcore has been developped. Revert to a tested version of that repository using the following commands:
+
+	$ git switch b715e4f --detach
     
 Then we provide the target directory where GCC and related tools are installed. This is for bare-metal applications, based on the 32-bit "RV32I" base specification and "M" multiplication/division extension. The size of the prefix directory will become about 1.1 GB after compilation.
 
-    $ ./configure --prefix=/opt/riscv32im_custom --with-arch=rv32im --with-abi=ilp32    
+	$ ./configure --prefix=/opt/riscv32im_custom --with-arch=rv32im --with-abi=ilp32    
 
-Before compiling, we need to add the support of custom instructions to binutils. In order to do that, we add the following lines to the C file `riscv-gnu-toolchain/riscv-binutils/opcodes/riscv-opc.c` inside the lengthy `const struct riscv_opcode riscv_opcodes[]` array:
+Before compiling, we need to add the support of custom instructions to binutils (see next section).
+
+Finally, we compile the tools by running make, preferably with multiple-threads (15 in the example), as it can take a while.
+
+	$ make newlib -j15
+
+- As explained, the first experiments can be done in simulation such as with Icarus Verilog. For experimentation on Xilinx FPGAs, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the release notes (see [here](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug973-vivado-release-notes-install-license.pdf)).
+
+
+### GNU toolchain support for custom instructions
+
+In order to do that, we add the following lines to the C file `riscv-gnu-toolchain/riscv-binutils/opcodes/riscv-opc.c` inside the lengthy `const struct riscv_opcode riscv_opcodes[]` array:
 
 	{"c0_lv",      0, INSN_CLASS_I, "d,s,t,j",   MATCH_CUSTOM0, MASK_CUSTOM0, match_opcode, 0 },
 	{"c0_sv",      0, INSN_CLASS_I, "d,s,t,j",   MATCH_CUSTOM0_RS1, MASK_CUSTOM0_RS1, match_opcode, 0 },
@@ -44,7 +59,7 @@ Before compiling, we need to add the support of custom instructions to binutils.
 
 where ``c0_lv``, ``c0_sv`` are two custom instructions for vector load and store respectively, using the same opcode and the S' instruction type. `c1`, `c2` and `c3` are for the custom instructions, and are using the I' instruction type. Currently, `c1`, `c2` and `c3` are used for the merge, sort and prefix SIMD instruction examples, but can be replaced as well as increased and aliased. For more information on the pre-defined opcodes for custom instructions, and for adding more, see file `riscv-gnu-toolchain/riscv-binutils/include/opcode/riscv-opc.h`. The equivalent files are also included in the `riscv-gnu-toolchain/riscv-gdb`, should this be of use.
 
-Note that with the latest versions of the riscv-gnu-toolchain, the custom opcodes need to be added manually inside the file `riscv-gnu-toolchain/riscv-binutils/include/opcode/riscv-opc.h`. For example, the following snippet can be copied from an earlier version of `riscv-opc.h` from [here](https://github.com/riscv-collab/riscv-binutils-gdb/blob/rvv-1.0.x/include/opcode/riscv-opc.h), as shown below.
+In the later versions of the riscv-gnu-toolchain, the custom opcodes need to be added manually inside the file `riscv-gnu-toolchain/riscv-binutils/include/opcode/riscv-opc.h`. For example, the following snippet can be copied from an earlier version of `riscv-opc.h` from [here](https://github.com/riscv-collab/riscv-binutils-gdb/blob/rvv-1.0.x/include/opcode/riscv-opc.h), as shown below.
 
 	#define MATCH_CUSTOM0 0xb
 	#define MASK_CUSTOM0  0x707f
@@ -57,12 +72,9 @@ Note that with the latest versions of the riscv-gnu-toolchain, the custom opcode
 	#define MATCH_CUSTOM3 0x7b
 	#define MASK_CUSTOM3  0x707f
 
-Finally, we compile the tools by running make, preferably with multiple-threads (15 in the example), as it can take a while.
+As before, the toolchain needs to now be recompiled to include the changes:
 
 	$ make newlib -j15
-
-- For experimentation on Xilinx FPGAs, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the licence (see [Release Notes](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug973-vivado-release-notes-install-license.pdf)).
-
 
 ### License
 

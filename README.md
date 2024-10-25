@@ -20,6 +20,8 @@ The source code is divided into 4 directories. A separate README file accompanie
 
 - In order to run the simulations, [Icarus Verilog](https://steveicarus.github.io/iverilog/) is the main requirement for running the provided examples (tested with version 11.0 (stable) (v11_0)). For the debugging functionality through waveforms, a waveform viewer is recommended, such as [GTKWave Analyzer](http://gtkwave.sourceforge.net/) (tested on version 3.3.108).
 
+- For experimentation on a Xilinx FPGA, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the release notes (see [here](https://www.xilinx.com/support/documents/sw_manuals/xilinx2022_2/ug973-vivado-release-notes-install-license.pdf)).
+
 - For software development for the softcore, we need to install the [RISC-V GNU Compiler Toolchain](https://github.com/riscv/riscv-gnu-toolchain), and modify it for supporting the custom SIMD instructions for inline assembly. Note that for simply testing that simulator works there already is a sample binary at ``RTL_and_simulation`` by default.
 
 First we fetch the code using the bash command (6.65GB of data, about 10GB after compilation):
@@ -43,8 +45,6 @@ Before compiling, we need to add the support of custom instructions to binutils 
 Finally, we compile the tools by running make, preferably with multiple-threads (15 in the example), as it can take a while.
 
 	$ make newlib -j15
-
-- As explained, the first experiments can be done in simulation such as with Icarus Verilog. For experimentation on Xilinx FPGAs, the freely-available Webpack version of [Vivado](https://www.xilinx.com/support/download.html) is enough, given that your FPGA board is mentioned in the release notes (see [here](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug973-vivado-release-notes-install-license.pdf)).
 
 
 ### GNU toolchain support for custom instructions
@@ -72,7 +72,7 @@ In the later versions of the riscv-gnu-toolchain, the custom opcodes need to be 
 	#define MATCH_CUSTOM3 0x7b
 	#define MASK_CUSTOM3  0x707f
 
-As before, the toolchain needs to now be recompiled to include the changes:
+As before, the toolchain now needs to be recompiled to include the changes:
 
 	$ make newlib -j15
 
@@ -122,6 +122,6 @@ Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V IS
 
 ### Thanks
 
-General comments or feedback on this repository has been provided by: [Tim Todman](http://www.doc.ic.ac.uk/~tjt97/), Hakam Atassi, Yutaka Nagashima
+General comments or feedback on this repository has been provided by: [Tim Todman](http://www.doc.ic.ac.uk/~tjt97/), Hakam Atassi, [Yutaka Nagashima](https://yutakang.github.io/research/)
 
 

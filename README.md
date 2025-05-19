@@ -122,6 +122,6 @@ Philippos Papaphilippou, Paul H. J. Kelly and Wayne Luk "Extending the RISC-V IS
 
 ### Thanks
 
-General comments or feedback on this repository has been provided by: [Tim Todman](http://www.doc.ic.ac.uk/~tjt97/), Hakam Atassi, [Yutaka Nagashima](https://yutakang.github.io/research/)
+General comments or feedback on this repository has been provided by: [Tim Todman](http://www.doc.ic.ac.uk/~tjt97/), Hakam Atassi, [Yutaka Nagashima](https://yutakang.github.io/), Ninghao Miao.
 
 

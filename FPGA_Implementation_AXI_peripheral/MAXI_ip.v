@@ -382,7 +382,7 @@
 	      burst_starts_r<=0;burst_starts_w<=0;	       
 	      resets<=0;     
 	      wnextc<=0; rnextc<=0;     
-	      accepting_reads<=1; accepting_writes<=1;    
+	      //accepting_reads<=1; accepting_writes<=1;    
 	      readyB<=0;             
 	      icount<=0;
 	      dinBstrobe<=0;
@@ -411,8 +411,8 @@
 	           roffset <= addrB;
 	        end 
 	        
-            accepting_reads<=!(start_single_burst_read|burst_read_active|enB); 
-	        accepting_writes<=!(start_single_burst_write|burst_write_active|(weB!=0));
+            //accepting_reads<=!(start_single_burst_read|burst_read_active|enB); 
+	        //accepting_writes<=!(start_single_burst_write|burst_write_active|(weB!=0));
 	
 	        
 	        axi_wdata <= FIFOout[FIFOout_i+wnext];

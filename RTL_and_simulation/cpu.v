@@ -217,8 +217,8 @@ module ALUintM(clk, reset, valid, rdin, data1, data2, func, result, rd, ready, a
 	   end
 	end
 	
-	wire lc = (clk2==2'b11);
-	always @(posedge /*clk2[1]*/lc) begin	
+	wire lc = clk2[1]; //(clk2==2'b11); // worked with past Vivado version (?)
+	always @(posedge lc) begin	
 		
 		product = data1s * data2s;
 		case (pend_f) 
